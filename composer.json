@@ -87,12 +87,14 @@
         "netgen/admin-ui-bundle": "^2.8",
         "primedigital/translations-bundle": "^1.0",
 
-        "netgen/layouts-standard": "~1.3.0",
-        "netgen/layouts-ezplatform": "~1.3.0",
-        "netgen/layouts-ezplatform-site-api": "~1.3.0",
-        "netgen/layouts-ezplatform-relation-list-query": "^1.3",
-        "netgen/layouts-ezplatform-tags-query": "^1.3",
-        "netgen/layouts-remote-media": "^1.1"
+        "netgen/layouts-standard": "~1.4.0@dev",
+        "netgen/layouts-ezplatform": "~1.4.0@dev",
+        "netgen/layouts-ezplatform-site-api": "~1.4.0@dev",
+        "netgen/layouts-ezplatform-relation-list-query": "^1.4@dev",
+        "netgen/layouts-ezplatform-tags-query": "^1.4@dev",
+        "netgen/layouts-remote-media": "^1.1@dev",
+        "netgen/layouts-enterprise": "~1.4.0@dev",
+        "netgen/layouts-enterprise-ezplatform": "~1.4.0@dev"
     },
     "require-dev": {
         "behat/behat": "^3.7.0",
@@ -113,6 +115,7 @@
         "snc/redis-bundle": "^3.3",
         "predis/predis": "^1.1.7",
         "deployer/recipes": "^6.2",
+        "franzl/studio": "*",
 
         "netgen/git-hooks": "^2.2",
         "phpstan/phpstan": "^1.8",
@@ -120,6 +123,11 @@
         "phpstan/phpstan-symfony": "^1.2",
         "phpstan/phpstan-doctrine": "^1.3"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        { "type": "composer", "url": "https://packagist.netgen.biz", "canonical": false }
+    ],
     "conflict": {
         "doctrine/dbal": "2.7.0",
         "doctrine/persistence": "1.3.2",
@@ -157,7 +165,8 @@
         "allow-plugins": {
             "ezsystems/ezpublish-legacy-installer": true,
             "netgen/git-hooks": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "franzl/studio": true
         }
     },
     "extra": {

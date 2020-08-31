@@ -20,6 +20,11 @@ parameters:
 netgen_layouts_ez_platform_site_api:
     search_service_adapter: filter
 
+netgen_layouts:
+    debug: "%kernel.debug%"
+    api_keys:
+        google_maps: AIzaSyB_M5ZpEqvGCuPsyolJaSWl2X7VupjHTwc
+
 # Configuration for Database connection, can have several connections used by eZ Repositories in ezplatform.yml
 doctrine:
     dbal:

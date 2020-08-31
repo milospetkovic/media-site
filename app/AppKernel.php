@@ -122,6 +122,10 @@ final class AppKernel extends Kernel
         $bundles[] = new Netgen\Bundle\LayoutsEzPlatformTagsQueryBundle\NetgenLayoutsEzPlatformTagsQueryBundle();
         $bundles[] = new Netgen\Bundle\LayoutsEzPlatformBundle\NetgenLayoutsEzPlatformBundle();
         $bundles[] = new Netgen\Bundle\LayoutsEzPlatformSiteApiBundle\NetgenLayoutsEzPlatformSiteApiBundle();
+        $bundles[] = new Netgen\Bundle\LayoutsEnterpriseBundle\NetgenLayoutsEnterpriseBundle();
+        $bundles[] = new Netgen\Bundle\LayoutsEnterpriseAdminBundle\NetgenLayoutsEnterpriseAdminBundle();
+        $bundles[] = new Netgen\Bundle\LayoutsEnterpriseUIBundle\NetgenLayoutsEnterpriseUIBundle();
+        $bundles[] = new Netgen\Bundle\LayoutsEnterpriseEzPlatformBundle\NetgenLayoutsEnterpriseEzPlatformBundle();
 
         if (\file_exists($this->getRootDir() . '/config/remote_media.yml')) {
             $bundles[] = new Netgen\Bundle\RemoteMediaBundle\NetgenRemoteMediaBundle();

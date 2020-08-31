@@ -27,7 +27,7 @@ netgen_site_legacy:
                 site.ini:
                     ExtensionSettings/ActiveExtensions:
                         - app
-                        - nglayouts
+                        - nglayouts_enterprise
                         - ezplatformsearch
                         - ezrichtext
                         - ngadminui

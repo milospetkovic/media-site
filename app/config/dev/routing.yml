@@ -10,6 +10,10 @@ _errors:
     resource: '@TwigBundle/Resources/config/routing/errors.xml'
     prefix: /_error
 
+netgen_layouts_dev:
+    resource: '@NetgenLayoutsBundle/Resources/config/routing_dev.yaml'
+    prefix: '%netgen_layouts.route_prefix%'
+
 _main:
     resource: ../routing.yml
 
