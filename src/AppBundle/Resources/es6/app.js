@@ -12,10 +12,6 @@ import LazyLoading from './components/LazyLoading.component';
 import CookieControlClass from './components/CookieControl.component';
 import VideoPoster from './components/VideoPoster.component';
 
-$(() => {
-  // Put your code here
-});
-
 const components = [
   {
     class: HeaderNav,
@@ -39,9 +35,7 @@ const components = [
   {
     class: LazyLoading,
     selector: 'html',
-    options: {
-      triggerElement: 'img'
-    }
+    options: {}
   },
   {
     class: CookieControlClass,
