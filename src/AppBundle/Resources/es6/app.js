@@ -11,6 +11,7 @@ import HeaderNav from './components/HeaderNav.component';
 import LazyLoading from './components/LazyLoading.component';
 import CookieControlClass from './components/CookieControl.component';
 import VideoPoster from './components/VideoPoster.component';
+import AjaxCollection from './components/AjaxCollection.component';
 
 const components = [
   {
@@ -50,6 +51,11 @@ const components = [
       dailymotionClass: 'dailymotion-poster',
       posterLinkElement: '.js-video-poster'
     }
+  },
+  {
+    class: AjaxCollection,
+    selector: '.ajax-collection',
+    options: {}
   }
 ]
 
