@@ -64,8 +64,8 @@
     {% endif %}
 
     {% if 'upload' in video_types %}
-        {% if not content.fields.video_file.empty or not content.fields.video_file_hd.empty %}
-            {% set field_name = content.fields.video_file_hd.empty ? 'video_file' : 'video_file_hd' %}
+        {% if not content.fields.video_file_desktop.empty or not content.fields.video_file_mobile.empty %}
+            {% set field_name = content.fields.video_file_mobile.empty ? 'video_file_desktop' : 'video_file_mobile' %}
 
             {{ ng_render_field(content.fields[field_name]) }}
         {% endif %}
@@ -121,8 +121,8 @@
     {% endif %}
 
     {% if 'upload' in video_types %}
-        {% if not content.fields.video_file.empty or not content.fields.video_file_hd.empty %}
-            {% set field_name = content.fields.video_file_hd.empty ? 'video_file' : 'video_file_hd' %}
+        {% if not content.fields.video_file_desktop.empty or not content.fields.video_file_mobile.empty %}
+            {% set field_name = content.fields.video_file_mobile.empty ? 'video_file_desktop' : 'video_file_mobile' %}
 
             {{ ng_render_field(content.fields[field_name]) }}
         {% endif %}
