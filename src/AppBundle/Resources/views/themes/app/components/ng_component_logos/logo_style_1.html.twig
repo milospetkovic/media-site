@@ -1,0 +1,42 @@
+{# content \Netgen\EzPlatformSiteApi\API\Values\Content #}
+{# location \Netgen\EzPlatformSiteApi\API\Values\Location #}
+
+{% import "@ezdesign/parts/macros.html.twig" as macros %}
+{% set image = content.fieldValue('image') %}
+{% set image_mobile = content.fieldValue('image_mobile') %}
+
+{% block content %}
+    <article class="view-component view-component-logo logo-style-1">
+        <div class="container">
+            {% if not content.fields.eyebrow_title.empty or not content.fields.title.empty %}
+                <header class="article-header">
+                    {% if not content.fields.eyebrow_title.empty %}
+                        <h4 class="eyebrow-title">
+                            {{ ng_render_field(content.fields.eyebrow_title) }}
+                        </h4>
+                    {% endif %}
+
+                    {% if not content.fields.title.empty %}
+                        <h2 class="title">
+                            {{ ng_render_field(content.fields.title)}}
+                        </h2>
+                    {% endif %}
+                </header>
+            {% endif %}
+
+            {% set logos = content.filterFieldRelations('logos', ['ng_logo'], 12, 1) %}
+
+            <div class="logo-grid">
+            {% for logo in logos %}
+                <div class="logo-grid-item">
+                    {% if not logo.fields.logo_svg.empty %}
+                        <a href="{{ path(logo) }}">
+                            <img src="{{ asset(logo.fields.logo_svg.value.id, 'ezfile') }}" alt="{{ logo.name }}" />
+                        </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </article>
+{% endblock %}
