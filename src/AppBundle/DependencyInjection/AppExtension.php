@@ -32,6 +32,7 @@ final class AppExtension extends Extension implements PrependExtensionInterface
     {
         $prependConfigs = [
             'layouts/blocks.yml' => 'netgen_layouts',
+            'layouts/components.yml' => 'netgen_layouts',
             'layouts/block_view.yml' => 'netgen_layouts',
             'layouts/item_view.yml' => 'netgen_layouts',
         ];
@@ -49,6 +50,11 @@ final class AppExtension extends Extension implements PrependExtensionInterface
         }
 
         $configFile = __DIR__ . '/../Resources/config/content_view.yml';
+        $config = Yaml::parse(file_get_contents($configFile));
+        $container->prependExtensionConfig('ezpublish', ['system' => $config]);
+        $container->addResource(new FileResource($configFile));
+
+        $configFile = __DIR__ . '/../Resources/config/component_view.yml';
         $config = Yaml::parse(file_get_contents($configFile));
         $container->prependExtensionConfig('ezpublish', ['system' => $config]);
         $container->addResource(new FileResource($configFile));
