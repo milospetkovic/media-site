@@ -1,8 +1,8 @@
 block_types:
     ezcomponent_hero:
         name: 'Hero'
+        icon: '/bundles/app/images/components/icon-component-hero.svg'
         definition_identifier: ezcomponent
-        icon: '/bundles/app/images/icon-component-hero.svg'
         defaults:
             view_type: hero_style_1
             parameters:
@@ -10,8 +10,8 @@ block_types:
 
     ezcomponent_about:
         name: 'About'
+        icon: '/bundles/app/images/components/icon-component-about.svg'
         definition_identifier: ezcomponent
-        icon: '/bundles/app/images/icon-component-about.svg'
         defaults:
             view_type: about_style_1
             parameters:
@@ -19,8 +19,8 @@ block_types:
 
     ezcomponent_features:
         name: 'Features'
+        icon: '/bundles/app/images/components/icon-component-features.svg'
         definition_identifier: ezcomponent
-        icon: '/bundles/app/images/icon-component-features.svg'
         defaults:
             view_type: features_style_1
             parameters:
@@ -28,8 +28,8 @@ block_types:
 
     ezcomponent_logos:
         name: 'Logos'
+        icon: '/bundles/app/images/components/icon-component-logos.svg'
         definition_identifier: ezcomponent
-        icon: '/bundles/app/images/icon-component-logos.svg'
         defaults:
             view_type: logo_style_1
             parameters:
@@ -37,7 +37,7 @@ block_types:
 
 block_type_groups:
     components:
-        block_types: 
+        block_types:
             - ezcomponent_hero
             - ezcomponent_about
             - ezcomponent_features
