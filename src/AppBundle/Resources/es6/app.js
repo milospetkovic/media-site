@@ -4,9 +4,27 @@
 // /* global <variable_name> */
 import '@babel/polyfill';
 import $ from 'jquery';
+import VideoHandlerComponent from './components/VideoHandler.component';
 import './ngsite';
 import '../sass/style.scss';
 
+const components = [
+  {
+    class: VideoHandlerComponent,
+    selector: '.js-responsive-video',
+  },
+];
+
 $(() => {
-  // Put your code here
+
+  components.forEach((component) => {
+    if (document.querySelector(component.selector) !== null) {
+      document.querySelectorAll(component.selector).forEach(
+        element => new component.class(element, component.options)
+      );
+    }
+  });
+
+  // Put your code inside ./components
+
 });

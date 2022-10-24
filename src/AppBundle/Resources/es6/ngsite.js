@@ -337,4 +337,7 @@ $(document).ready(() => {
   $('.js-video-poster').each(function () {
     this.href = $('img', this).attr('src');
   });
+
+
+  
 });
