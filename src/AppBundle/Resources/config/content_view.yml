@@ -128,6 +128,27 @@ frontend_group:
                 params:
                     with_intro: true
                 match: ~
+        zigzag:
+            common:
+                template: "@ezdesign/content/zigzag/{content_type}.html.twig"
+                match:
+                    Identifier\ContentType:
+                        - ng_article
+                        - ng_banner
+                        - ng_blog_post
+                        - ng_news
+            match_all:
+                template: "@ezdesign/content/zigzag.html.twig"
+                match: ~
+        accordion:
+            common:
+                template: "@ezdesign/content/accordion/{content_type}.html.twig"
+                match:
+                    Identifier\ContentType:
+                        - ng_banner
+            match_all:
+                template: "@ezdesign/content/accordion.html.twig"
+                match: ~
         mini:
             common:
                 template: "@ezdesign/content/mini/{content_type}.html.twig"
