@@ -4,13 +4,13 @@
 // /* global <variable_name> */
 import '@babel/polyfill';
 import $ from 'jquery';
-import VideoHandlerComponent from './components/VideoHandler.component';
+import ResponsiveVideoComponent from './components/ResponsiveVideo.component';
 import './ngsite';
 import '../sass/style.scss';
 
 const components = [
   {
-    class: VideoHandlerComponent,
+    class: ResponsiveVideoComponent,
     selector: '.js-responsive-video',
   },
 ];
