@@ -146,6 +146,7 @@ frontend_group:
                         - ng_frontpage
                         - ng_gallery
                         - ng_htmlbox
+                        - ng_job_position
                         - ng_landing_page
                         - ng_news
                         - ng_recipe
