@@ -1,4 +1,8 @@
 parameters:
+    app.layouts.block.plugin.featured_component_grid.columns:
+        2: '2 columns'
+        3: '3 columns'
+        4: '4 columns'
 
 services:
     ngsite.layouts.block.plugin.vertical_whitespace_v2:
@@ -6,5 +10,12 @@ services:
         arguments:
             - "%ngsite.layouts.block.plugin.vertical_whitespace.top%"
             - "%ngsite.layouts.block.plugin.vertical_whitespace.bottom%"
+        tags:
+            - { name: netgen_layouts.block_definition_handler.plugin, priority: 200 }
+
+    app.layouts.block.plugin.featured_component_grid:
+        class: AppBundle\Layouts\Block\Plugin\FeaturedComponentGridPlugin
+        arguments:
+            - "%app.layouts.block.plugin.featured_component_grid.columns%"
         tags:
             - { name: netgen_layouts.block_definition_handler.plugin, priority: 200 }

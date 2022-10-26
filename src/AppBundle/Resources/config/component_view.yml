@@ -3,6 +3,8 @@ frontend_group:
         about_style_1:
             ng_component_about:
                 template: "@ezdesign/components/ng_component_about/about_style_1.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_about
@@ -10,6 +12,8 @@ frontend_group:
         about_style_2:
             ng_component_about:
                 template: "@ezdesign/components/ng_component_about/about_style_2.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_about
@@ -17,6 +21,8 @@ frontend_group:
         about_style_3:
             ng_component_about:
                 template: "@ezdesign/components/ng_component_about/about_style_3.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_about
@@ -24,6 +30,8 @@ frontend_group:
         about_style_4:
             ng_component_about:
                 template: "@ezdesign/components/ng_component_about/about_style_4.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_about
@@ -31,6 +39,8 @@ frontend_group:
         hero_style_1:
             ng_component_hero:
                 template: "@ezdesign/components/ng_component_hero/hero_style_1.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_hero
@@ -38,6 +48,8 @@ frontend_group:
         hero_style_2:
             ng_component_hero:
                 template: "@ezdesign/components/ng_component_hero/hero_style_2.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_hero
@@ -45,6 +57,8 @@ frontend_group:
         hero_style_3:
             ng_component_hero:
                 template: "@ezdesign/components/ng_component_hero/hero_style_3.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_hero
@@ -52,6 +66,8 @@ frontend_group:
         logo_style_1:
             ng_component_logos:
                 template: "@ezdesign/components/ng_component_logos/logo_style_1.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_logos
@@ -59,6 +75,8 @@ frontend_group:
         logo_style_2:
             ng_component_logos:
                 template: "@ezdesign/components/ng_component_logos/logo_style_2.html.twig"
+                params:
+                    valid_parameters: ['!number_of_columns']
                 match:
                     Identifier\ContentType:
                         - ng_component_logos
