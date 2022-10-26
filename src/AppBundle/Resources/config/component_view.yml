@@ -91,3 +91,10 @@ frontend_group:
                     Identifier\ContentType:
                         - ng_component_features
 
+        features_style_5:
+            ng_component_features:
+                template: "@ezdesign/components/ng_component_features/features_style_5.html.twig"
+                match:
+                    Identifier\ContentType:
+                        - ng_component_features
+
