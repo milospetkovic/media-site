@@ -15,8 +15,7 @@ const components = [
   },
 ];
 
-$(() => {
-
+const componentsInit = () => {
   components.forEach((component) => {
     if (document.querySelector(component.selector) !== null) {
       document.querySelectorAll(component.selector).forEach(
@@ -24,7 +23,10 @@ $(() => {
       );
     }
   });
+}
 
-  // Put your code inside ./components
-
+$(componentsInit); // initialize on DOM ready
+document.addEventListener('ngl:refresh', (e) => { // initialize on special event
+  // console.log(e.target, e.currentTarget);
+  componentsInit();
 });
