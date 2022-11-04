@@ -9,3 +9,5 @@ ngsite.errors.500.title: "Quelque chose ne fonctionne pas. Si le problème persi
 ngsite.errors.500.message: "Il y a un problème avec la page que vous recherchez. Veuillez réessayer plus tard."
 ngsite.errors.default.title: "Un problème est survenu."
 ngsite.errors.default.message: "Nous sommes désolés, un problème est survenu. Veuillez réessayer plus tard et si le problème persiste, veuillez nous contacter."
+ngsite.errors.default.subtitle: "Oops!"
+ngsite.errors.button.back: "Back to Homepage"
