@@ -6,6 +6,7 @@ import '@babel/polyfill';
 import $ from 'jquery';
 import ResponsiveVideoComponent from './components/ResponsiveVideo.component';
 import './ngsite';
+import './blocks/blocks';
 import '../sass/style.scss';
 
 const components = [
