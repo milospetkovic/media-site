@@ -13,6 +13,8 @@ ezpublish:
             pagelayout: "@ezdesign/pagelayout.html.twig"
             user:
                 login_template: "@ezdesign/user/login.html.twig"
+        field_templates:
+            - { template: "@ezdesign/parts/content_fields.html.twig", priority: 10000 }
 
 ez_publish_legacy:
     system:

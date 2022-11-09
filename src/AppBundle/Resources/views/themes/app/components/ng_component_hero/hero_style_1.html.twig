@@ -2,7 +2,7 @@
 {# location \Netgen\EzPlatformSiteApi\API\Values\Location #}
 
 {% import "@ezdesign/parts/macros.html.twig" as macros %}
-{% import '@ezdesign/parts/content_fields.html.twig' as content_fields %}
+{% import '@ezdesign/parts/content_field_macros.html.twig' as content_fields %}
 
 {% set image = content.fields.image %}
 {% set image_mobile = content.fields.image_mobile %}
@@ -11,7 +11,7 @@
 
 {% block content %}
     <article class="view-component view-component-hero hero-style-1{% if image is not empty or local_video is not empty %} bg-figure{% endif %}">
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 col-xl-7">
