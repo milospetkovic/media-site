@@ -12,8 +12,7 @@ parameters:
 
     netgen_admin_ui.default.legacy_routes: [ez_urlalias, ngsite_content_search]
 
-    ngsite.default.lazy_loading.enabled: false
-    ngsite.default.lazy_loading.initial_image_alias: 'i30'
+    ngsite.default.lazy_loading.enabled: true
     ngsite.default.render_content_directly: true
     ngsite.default.template.pagerfanta.ngsite: '@@ezdesign/pagerfanta/ngsite.html.twig'
     ngsite.menu.use_field_identifier_in_menu_name: true
