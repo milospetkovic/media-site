@@ -3,51 +3,60 @@
 {% block ngenhancedlink_field %}
 {% apply spaceless %}
     {% if not ibexa_field_is_empty( content, field ) %}
-        <div {{ block( 'field_attributes' ) }}>
-            {% if field.value.isTypeInternal%}
-                {% if field.value.isTargetModal %}
-                    <a href="#"
-                       class="button btn btn-default btn-large btn-arrow-right form-modal-trigger"
-                       data-url="{{ path('app_collect_info_modal', {formLocationId: field.value.reference, refererLocationId: field.value.reference}) }}"
-                    >
-                        {% if field.value.label is not empty %}
-                            {{ field.value.label }}
-                        {% endif %}
-                    </a>
-                {% elseif field.value.isTargetEmbed %}
-                    <div class="form-in-place">
-                        {{ render(
-                            controller(
-                                "ibexa_content::viewAction",
-                                {
-                                    'contentId': field.value.reference,
-                                    'viewType': 'embed',
-                                    'layout': false
-                                }
-                            )
-                        ) }}
-                    </div>
-                {% else %}
-                    {{ render(
-                        controller(
-                            "ibexa_content::viewAction",
-                            {
-                                'contentId': field.value.reference,
-                                'viewType': 'text_linked',
-                                'layout': false
+        {% if field.value.isTypeInternal%}
+            {% set label = field.value.label ? field.value.label : ngsite_content_name(field.value.reference) %}
+
+            {% if field.value.isTargetModal %}
+                {#  todo handle field view params #}
+                {{ render(
+                    controller(
+                        "ng_content::viewAction",
+                        {
+                            'contentId': field.value.reference,
+                            'viewType': 'modal_trigger',
+                            'layout': false,
+                            'params': {
+                                'label': label,
+                                'suffix': field.value.suffix,
+                                'refererLocationId': contentInfo.mainLocationId
                             }
-                        )
-                    ) }}
-                {% endif %}
-            {% endif%}
-            {% if field.value.isTypeExternal %}
-                {% if field.value.isTargetLinkInNewTab %}
-                    <a href="{{ field.value.reference }}" {{ block( 'field_attributes' ) }} target="_blank">{{ field.value.label ? field.value.label : field.value.reference }}</a>
-                {% else %}
-                    <a href="{{ field.value.reference }}" {{ block( 'field_attributes' ) }}>{{ field.value.label ? field.value.label : field.value.reference }}</a>
-                {% endif %}
+                        }
+                    )
+                ) }}
+            {% elseif field.value.isTargetEmbed %}
+                {{ render(
+                    controller(
+                        "ng_content::viewAction",
+                        {
+                            'contentId': field.value.reference,
+                            'viewType': 'payload',
+                            'layout': false,
+                            'params': {
+                                'label': label,
+                                'suffix': field.value.suffix,
+                                'refererLocationId': contentInfo.mainLocationId
+                            }
+                        }
+                    )
+                ) }}
+            {% else if field.value.isTargetLinkInNewTab %}
+                <a href="{{ path("ibexa.url.alias", { "contentId": field.value.reference }) }}" {{ block( 'field_attributes' ) }} target="_blank">{{ label }}</a>
+            {% else %}
+                <a href="{{ path("ibexa.url.alias", { "contentId": field.value.reference }) }}" {{ block( 'field_attributes' ) }}>{{ label }}</a>
             {% endif %}
-        </div>
+        {% elseif field.value.isTypeExternal %}
+            {% set label = field.value.label ? field.value.label : field.value.reference %}
+
+            {% if field.value.isTargetModal %}
+                <div>{{ label }}</div>
+            {% elseif field.value.isTargetEmbed %}
+                <div>{{ label }}</div>
+            {% elseif field.value.isTargetLinkInNewTab %}
+                <a href="{{ field.value.reference }}" {{ block( 'field_attributes' ) }} target="_blank">{{ label }}</a>
+            {% else %}
+                <a href="{{ field.value.reference }}" {{ block( 'field_attributes' ) }}>{{ label }}</a>
+            {% endif %}
+        {% endif %}
     {% endif %}
 {% endapply %}
 {% endblock %}
