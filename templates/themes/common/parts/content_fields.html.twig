@@ -6,8 +6,10 @@
         {% if field.value.isTypeInternal%}
             {% set label = field.value.label ? field.value.label : ngsite_content_name(field.value.reference) %}
 
+            {% dump(field) %}
             {% if field.value.isTargetModal %}
                 {#  todo handle field view params #}
+
                 {{ render(
                     controller(
                         "ng_content::viewAction",
@@ -39,7 +41,7 @@
                         }
                     )
                 ) }}
-            {% else if field.value.isTargetLinkInNewTab %}
+            {% elseif field.value.isTargetLinkInNewTab %}
                 <a href="{{ path("ibexa.url.alias", { "contentId": field.value.reference }) }}" {{ block( 'field_attributes' ) }} target="_blank">{{ label }}</a>
             {% else %}
                 <a href="{{ path("ibexa.url.alias", { "contentId": field.value.reference }) }}" {{ block( 'field_attributes' ) }}>{{ label }}</a>

@@ -34,7 +34,6 @@ ibexa:
         admin_group:
             languages:
                 - eng-GB
-                - ger-DE
             session:
                 name: eZSESSID
         fh_group:
